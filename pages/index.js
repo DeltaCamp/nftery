@@ -1,6 +1,6 @@
 import { EmptyState, Layout, Page, ResourcePicker } from '@shopify/polaris';
 import store from 'store-js';
-import ResourceListWithProducts from '../components/ResourceList';
+import ResourceList from '../components/ResourceList';
 
 const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
 
@@ -12,11 +12,13 @@ class Index extends React.Component {
 
     return (
       <Page
-        primaryAction={{
-          content: 'Select products',
+        action={{
+          content: 'Mint Assets',
+          onAction: () => this.setState({ open: true }),
         }}
       >
         <ResourcePicker
+          allowMultiple={false}
           resourceType="Product"
           showVariants={false}
           open={this.state.open}
@@ -38,7 +40,7 @@ class Index extends React.Component {
           </EmptyState>
         </Layout>
         ) : (
-        <ResourceListWithProducts />
+        <ResourceList />
         ) }
       </Page>
     )

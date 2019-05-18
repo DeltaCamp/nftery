@@ -9,7 +9,7 @@ import {
   TextField,
 } from '@shopify/polaris';
 
-class AnnotatedLayout extends React.Component {
+class Inventory extends React.Component {
   state = {
     discount: '10%',
   };
@@ -59,4 +59,4 @@ class AnnotatedLayout extends React.Component {
   };
 }
 
-export default AnnotatedLayout;
+export default Inventory;
